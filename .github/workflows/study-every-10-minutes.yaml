@@ -1,4 +1,4 @@
-name: 'Run lessons every 5 mins'
+name: 'Run lessons every 10 mins'
 run-name: Your hack is running! Click me to see it's progress.
 
 on:
