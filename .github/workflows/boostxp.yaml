@@ -1,0 +1,31 @@
+name: 'Boost XP (DANGEROUS)'
+run-name: Your hack is running! Click me to see it's progress.
+
+on:
+  workflow_dispatch:
+    inputs:
+      lessonsToComplete:
+        description: 'Unlike Get XP hack (which is recommended), this hack sends several lessons at once, which is very risky, it is recommended to use Get XP hack. If you choose to proceed, enter the amount of fake lessons to run below. (Each give 200 XP).'
+        required: true
+        default: 5
+
+jobs:
+  check-bats-version:
+    runs-on: ubuntu-latest
+
+    steps:
+
+      - uses: actions/checkout@v4
+
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+        
+      - run: npm install node-fetch
+
+      - run: npm run xp2
+        env:
+          lessonsToComplete: ${{ github.event.inputs.lessonsToComplete }}
+          token: ${{ secrets.TOKEN }}
+          userId: ${{ secrets.USER_ID }}
