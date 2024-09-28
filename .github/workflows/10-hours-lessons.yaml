@@ -1,9 +1,9 @@
-name: '10 Hours Farm XP'
+name: '6 Hours Farm XP'
 run-name: 'Your study script is running! Click me to see its progress.'
 
 on:
   schedule:
-    - cron: '* */10 * * *' 
+    - cron: '* */6 * * *' 
   workflow_dispatch:
 
 jobs:
